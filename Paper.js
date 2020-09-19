@@ -8,20 +8,16 @@ class Paper{
             friction : 0.5,
             density : 1.2
         }
-    this.body = Bodies.circle(x, y, 20, options);
-    this.radius = 10;
-
+    this.body = Bodies.circle(x, y, 70, options);
+    this.radius = 70;
+    this.image = loadImage("Images/paper_IMG.png");
     World.add(world, this.body);
+    this.body.debug = true;
     }
 
     display(){
 
-        var pos = this.body.position;
-
-        fill("white");
-        strokeWeight = 10;
-        stroke("blue");
-        ellipseMode(RADIUS);
-        ellipse(pos.x, pos.y, 20, 20);
+        imageMode(CENTER);
+        image(this.image, this.body.position.x, this.body.position.y, this.radius);
     }
 }
